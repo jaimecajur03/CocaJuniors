@@ -51,22 +51,11 @@
             font-size: 2rem;
             text-align: center;
             margin-bottom: 1rem;
-            color: #333;
+            color: #000000;
         }
         .jugador:hover {
             transform: translateY(-5px);
             transition: transform 0.3s ease;
-        }
-        #equipaciones {
-            padding: 1rem;
-            background-color: #fff;
-}
-
-        #equipaciones h2 {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: #333;
         }
 
         .contenedor-equipaciones {
@@ -106,25 +95,210 @@
             }
         }
 
+        .contenedor-estadio {
+        display: flex;
+            gap: 1rem;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .contenedor-estadio img {
+            width: 400px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+        .info-estadio {
+            max-width: 400px;
+            text-align: left;
+        }
+
+        .info-estadio h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-estadio p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        @media (max-width: 600px) {
+            .contenedor-estadio {
+                flex-direction: column;
+            }
+
+            .contenedor-estadio img {
+                width: 100%;
+            }
+
+            .info-estadio {
+                text-align: center;
+            }
+        }
+        /* Barra de navegación */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 1);
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: #d6336c;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #d6336c;
+        }
+
+        /* Ajustamos el scroll suave para el efecto */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Para que el contenido no quede escondido debajo del header */
+        section {
+            padding-top: 120px;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-image: url('imágenes/cocajunescudo2.jpg');
+            background-size: cover;  /* Hace que la imagen cubra toda la pantalla */
+            background-position: center center;  /* Centra la imagen */
+            background-attachment: fixed;  /* Hace que la imagen se quede fija al hacer scroll */
+            background-repeat: no-repeat;  /* Evita que la imagen se repita */
+            position: relative;
+        }
+        /* Capa oscura para dar contraste a la imagen */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);  /* Fondo oscuro con menor opacidad */
+            z-index: -1;  /* Asegura que esté detrás del contenido */
+        }       
+        /* Secciones con fondo blanco */
+        #equipaciones {
+            margin-top: 60px;
+            background-color: rgba(255, 255, 255, 0.8);  /* Fondo blanco con opacidad */
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        #estadio {
+            margin-top: 0px;
+            background-color: rgba(255, 255, 255, 0.8);  /* Fondo blanco con opacidad */
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        /* Hacer el fondo más nítido en las secciones */
+        #equipaciones h2, #estadio h2 {
+            color: #333;
+            text-align: center;
+            font-size: 2rem;
+        }
+        #equipaciones, #estadio {
+            padding: 2rem;
+            background-color: rgba(255, 255, 255, 0.3);  /* Asegura que el fondo sea blanco pero se ve el escudo */
+        }
+
+        #redes-sociales {
+            background-color: rgba(255, 255, 255, 0.3);  /* Fondo blanco con opacidad */
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        #redes-sociales h2 {
+            font-size: 2rem;
+            color: #d6336c;
+            margin-bottom: 1rem;
+        }
+
+        .iconos-redes {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .iconos-redes a img {
+            width: 40px;
+            height: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        .iconos-redes a img:hover {
+            transform: scale(1.2);
+        }
+
+        footer {
+            background-color: #222;
+            color: #eee;
+            text-align: center;
+            padding: 0.5rem;
+            font-size: 0.9rem;
+        }
 
 
-
-
-    
-    
     </style>
 </head>
 <body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Coca Juniors</div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#jugadores">Jugadores</a></li>
+                <li><a href="#equipaciones">Equipaciones</a></li>
+                <li><a href="#estadio">Estadio</a></li>
+                <li><a href="#redes-sociales">Redes Sociales</a></li>
+            </ul>
+        </nav>
+    </header>
     <section id="equipaciones">
         <h2>EQUIPACIONES</h2>
         <div class="contenedor-equipaciones">
             <article class="equipacion">
-                <img src="imágenes\eq1delantera.jpg" alt="Primera equipación Coca Juniors">
+                <img src="imágenes/equipación/eq1delantera.jpg" alt="Primera equipación Coca Juniors">
                 <h3>Primera equipación</h3>
                 <p>Color blanco con detalles rosas. Usada como local.</p>
             </article>
             <article class="equipacion">
-                <img src="imágenes\eq1delantera.jpg" alt="Segunda equipación Coca Juniors">
+                <img src="imágenes/equipación/eq2delantera.jpg" alt="Segunda equipación Coca Juniors">
                 <h3>Segunda equipación</h3>
                 <p>Color rosa con detalles blancos. Usada como visitante.</p>
             </article>
@@ -134,26 +308,109 @@
         <h2>JUGADORES</h2>
         <div class="contenedor-jugadores">
             <article class="jugador">
-                <img src="https://via.placeholder.com/200" alt="Foto de Nombre del jugador">
-                <h3>Nombre del jugador</h3>
-                <p>Dorsal: X</p>
-                <p>Posición: X</p>
+                <img src="imágenes/jugadores/yashin.png" alt="Foto de Nombre del jugador">
+                <h3>Jaime Carrillo</h3>
+                <p>Dorsal: 5</p>
+                <p>Posición: Portero</p>
             </article>
             <article class="jugador">
-                <img src="https://via.placeholder.com/200" alt="Foto de Nombre del jugador">
-                <h3>Nombre del jugador</h3>
-                <p>Dorsal: Y</p>
-                <p>Posición: Y</p>
+                <img src="imágenes/jugadores/xavi.png" alt="Foto de Nombre del jugador">
+                <h3>Miguel Ángel Pérez</h3>
+                <p>Dorsal: 8</p>
+                <p>Posición: Mediocampista</p>
             </article>
             <article class="jugador">
-                <img src="https://via.placeholder.com/200" alt="Foto de Nombre del jugador">
-                <h3>Nombre del jugador</h3>
-                <p>Dorsal: Z</p>
-                <p>Posición: Z</p>
+                <img src="imágenes/jugadores/mathieu.png" alt="Foto de Nombre del jugador">
+                <h3>Javier Aguayo</h3>
+                <p>Dorsal: 13</p>
+                <p>Posición: Banquillo</p>
+            </article>
+            <article class="jugador">
+                <img src="imágenes/jugadores/CR7.jpg" alt="Foto de Nombre del jugador">
+                <h3>Juan Márquez</h3>
+                <p>Dorsal: 7</p>
+                <p>Posición: Delantero</p>
+            </article>
+            <article class="jugador">
+                <img src="imágenes/jugadores/puyol.jpg" alt="Foto de Nombre del jugador">
+                <h3>Adrián Jurado</h3>
+                <p>Dorsal: 4</p>
+                <p>Posición: Defensa</p>
+            </article>
+            <article class="jugador">
+                <img src="imágenes/jugadores/Gerard_Piqué_2017.png" alt="Foto de Nombre del jugador">
+                <h3>Daniel Casado</h3>
+                <p>Dorsal: 9</p>
+                <p>Posición: Defensa</p>
+            </article>
+            <article class="jugador">
+                <img src="imágenes/jugadores/raúlg.png" alt="Foto de Nombre del jugador">
+                <h3>Ismael Killer</h3>
+                <p>Dorsal: 10</p>
+                <p>Posición: Delantero</p>
+            </article>
+            <article class="jugador">
+                <img src="imágenes/jugadores/ferrán.png" alt="Foto de Nombre del jugador">
+                <h3>Juan Luis</h3>
+                <p>Dorsal: 11</p>
+                <p>Posición: Delantero</p>
+            </article>
+            <article class="jugador">
+                <img src="imágenes/jugadores/crouch.png" alt="Foto de Nombre del jugador">
+                <h3>Daniel Parra</h3>
+                <p>Dorsal: 15</p>
+                <p>Posición: Delantero</p>
             </article>
         </div>
     </section>
+    <section id="estadio">
+        <h2>ESTADIO</h2>
+        <div class="contenedor-estadio">
+            <a href="https://www.google.com/maps/place/37.894284749669744,-4.77432279918113" target="_blank">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3792.1945817655137!2d-4.776897723645707!3d37.89428890526562!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzfCsDUzJzM5LjQiTiA0wrA0NicyNy42Ilc!5e1!3m2!1ses!2ses!4v1745338626141!5m2!1ses!2ses" 
+                    width="400" 
+                    height="350" 
+                    style="border:0;
+                    "allowfullscreen="
+                    "loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+                
+            </a>
+            <div class="info-estadio">
+                <h3>Estadio Coca Juniors</h3>
+                <p>Ubicado en el Colegio Virgen del Carmen, en Córdoba, este estadio acoge los partidos de local y visitante del Coca Juniors. De puertas abiertas y con un aforo limitado estando este a tres cuartas partes del campo, se puede disfrutar de los partidos del equipo y de los rivales. Pulsa en el mapa para verlo en Google Maps.</p>
+            </div>
+        </div>
+    </section>
+    
+    
+    
+    
 
+
+    <section id="redes-sociales">
+        <h2>SÍGUENOS</h2>
+        <div class="iconos-redes">
+            <a href="https://www.instagram.com/tucuenta" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+            </a>
+            <a href="https://www.twitter.com/tucuenta" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter">
+            </a>
+            <a href="https://www.facebook.com/tucuenta" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+            </a>
+            <a href="https://www.tiktok.com/@tucuenta" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok">
+            </a>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Coca Juniors - Todos los derechos reservados</p>
+    </footer>
+    
 </body>
 
 </html>
