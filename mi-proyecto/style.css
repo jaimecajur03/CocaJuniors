@@ -1,0 +1,346 @@
+.contenedor-jugadores {
+    display: flex; /* Coloca los elementos hijos en fila por defecto */
+    overflow-x: auto; /* Permite desplazamiento lateral */
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+}
+.jugador {
+    flex-shrink: 0; /* No se encogen */
+    width: 200px;   /* Tamaño fijo */
+    margin-right: 1rem; /* Espacio entre tarjetas */
+    scroll-snap-align: start;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    padding: 1rem;
+    text-align: center;
+}
+@media (max-width: 600px) {
+    .jugador {
+        width: 140px;
+    }
+}
+.jugador img {
+    width: 100%;
+    border-radius: 8px;
+}
+.jugador h3 {
+    font-size: 1.1rem;
+    margin: 0.5rem 0 0.3rem;
+}
+
+.jugador p {
+    font-size: 0.9rem;
+    margin: 0.2rem 0;
+}
+#jugadores {
+    padding: 1rem;
+}
+body {
+    background-color: #eeeeee;
+    font-family: Arial, sans-serif;
+}
+#jugadores h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #000000;
+}
+.jugador:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+.contenedor-equipaciones {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.equipacion {
+    width: 250px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    padding: 1rem;
+    text-align: center;
+}
+
+.equipacion img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.equipacion h3 {
+    font-size: 1.2rem;
+    margin: 0.5rem 0 0.3rem;
+}
+
+.equipacion p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+@media (max-width: 600px) {
+    .equipacion {
+        width: 90%;
+    }
+}
+
+.contenedor-estadio {
+display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.contenedor-estadio img {
+    width: 400px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.info-estadio {
+    max-width: 400px;
+    text-align: left;
+}
+
+.info-estadio h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.info-estadio p {
+    font-size: 1rem;
+    color: #555;
+}
+
+@media (max-width: 600px) {
+    .contenedor-estadio {
+        flex-direction: column;
+    }
+
+    .contenedor-estadio img {
+        width: 100%;
+    }
+
+    .info-estadio {
+        text-align: center;
+    }
+}
+/* Barra de navegación */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 1);
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #d6336c;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #d6336c;
+}
+
+/* Ajustamos el scroll suave para el efecto */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Para que el contenido no quede escondido debajo del header */
+section {
+    padding-top: 120px;
+}
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url('imágenes/cocajunescudo2.jpg');
+    background-size: cover;  /* Hace que la imagen cubra toda la pantalla */
+    background-position: center center;  /* Centra la imagen */
+    background-attachment: fixed;  /* Hace que la imagen se quede fija al hacer scroll */
+    background-repeat: no-repeat;  /* Evita que la imagen se repita */
+    position: relative;
+}
+/* Capa oscura para dar contraste a la imagen */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);  /* Fondo oscuro con menor opacidad */
+    z-index: -1;  /* Asegura que esté detrás del contenido */
+}       
+/* Secciones con fondo blanco */
+#equipaciones {
+    margin-top: 60px;
+    background-color: rgba(255, 255, 255, 0.8);  /* Fondo blanco con opacidad */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+#estadio {
+    margin-top: 0px;
+    background-color: rgba(255, 255, 255, 0.8);  /* Fondo blanco con opacidad */
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #3ad79b; /* negro puro */
+    font-weight: bold; /* para hacerla más gruesa/visible */
+    font-size: 1.2rem; /* o el tamaño que prefieras */
+}
+/* Hacer el fondo más nítido en las secciones */
+#equipaciones h2, #estadio h2 {
+    color: #333;
+    text-align: center;
+    font-size: 2rem;
+}
+#equipaciones, #estadio {
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.3);  /* Asegura que el fondo sea blanco pero se ve el escudo */
+}
+
+#redes-sociales {
+    background-color: rgba(255, 255, 255, 0.3);  /* Fondo blanco con opacidad */
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+#redes-sociales h2 {
+    font-size: 2rem;
+    color: #d6336c;
+    margin-bottom: 1rem;
+}
+
+.iconos-redes {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.iconos-redes a img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.iconos-redes a img:hover {
+    transform: scale(1.2);
+}
+
+footer {
+    background-color: #222;
+    color: #eee;
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.music-player {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 50px;
+}
+
+.left-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.disk {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #ccc;
+    animation: rotateDisk 5s linear infinite paused;
+}
+
+.disk-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.song-title {
+    margin-top: 15px;
+    font-size: 24px;
+}
+
+.controls {
+    margin-top: 20px;
+}
+
+.controls button {
+    margin: 0 10px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.progress-container {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#progress {
+    width: 150px;
+}
+
+.right-side {
+    width: 300px;
+    height: 300px;
+    overflow-y: auto;
+    background-color: rgba(255, 255, 255, 0.8);  /* Fondo blanco con opacidad */
+    padding: 15px;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    color: #ff00bf; /* negro puro */
+    font-weight: bold; /* para hacerla más gruesa/visible */
+    font-size: 1.2rem; /* o el tamaño que prefieras */
+}
+@keyframes rotateDisk {
+    0% {
+    transform: rotate(0deg);
+    }
+    100% {
+    transform: rotate(360deg);
+    }
+}
